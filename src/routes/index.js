@@ -10,10 +10,15 @@ router.get("/", (req, res) => {
     {
       route: "/roll-a-die",
     },
+    {
+      route: "/tz",
+      parameters: ["/:continent/:city"],
+    },
   ]);
 });
 
 router.use("/github", require("./github"));
 router.use("/roll-a-die", require("./roll-a-die"));
+router.use("/tz", require("./timeZone.js"));
 
 module.exports = router;
